@@ -3,4 +3,55 @@
   <groupId>neroAo.blogs</groupId>
   <artifactId>blogs-base</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<project.build.sorceEncoding>UTF-8</project.build.sorceEncoding>
+  	<maven.complier.source>1.8</maven.complier.source>
+  	<maven.complier.target>1.8</maven.complier.target>
+  	<spring-boot.version>1.5.2.RELEASE</spring-boot.version>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-web</artifactId>
+  	</dependency>
+  </dependencies>
+  
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- spring boot 插件 -->
+  		<dependency>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-dependencies</artifactId>
+  			<version>${spring-boot.version}</version>
+  			<type>pom</type>
+  			<scope>import</scope>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-maven-plugin</artifactId>
+  			<version>${spring-boot.version}</version>
+  			<configuration>
+  				<executable>true</executable>
+  			</configuration>
+  			<executions>
+  				<execution>
+	  				<goals>
+	  					<!-- 使用Spring boot重新打包 -->
+	  					<goal>repackage</goal>
+	  					<!-- 打包应用构建信息 -->
+	  					<goal>build-info</goal>
+	  				</goals>
+  				</execution>
+  			</executions>
+  		</plugin>
+  	</plugins>
+  </build>
+  
 </project>
