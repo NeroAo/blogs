@@ -1,13 +1,15 @@
-DROP TABLE IF EXISTS `blogs_article`;
-CREATE TABLE `blogs_article` (
-  `id` int(11) NOT NULL,
-  `title` varchar(50) default NULL,
-  `auther` varchar(20) default NULL,
-  `content` varchar(500) default NULL,
-  `createTime` date default NULL,
-  `lastUpdateTime` date default NULL,
-  `likeNum` int(11) default NULL,
-  `readTimes` int(11) default NULL,
-  `isDel` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+DROP TABLE IF EXISTS blogs_article;
+CREATE TABLE blogs_article (
+  id 						int NOT NULL auto_increment,
+  title 					varchar(50) default NULL,
+  auther 					varchar(20) default NULL,
+  abstract				varchar(100) default NULL,
+  isDefaultAbs			int default 0,
+  content 				varchar(500) default NULL,
+  createTime 				date default NULL,
+  lastUpdateTime 			date default NULL,
+  likeNum 				int default 0,
+  readTimes 				int default 0,
+  isDel 					int default 0,
+  PRIMARY KEY  (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
