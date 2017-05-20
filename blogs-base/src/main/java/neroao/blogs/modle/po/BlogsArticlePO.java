@@ -1,11 +1,12 @@
-package neroao.blogs.modle;
+package neroao.blogs.modle.po;
 
 import java.util.Date;
 
-public class BlogsArticle {
+public class BlogsArticlePO {
 	private int id;
 	private String title;
-	private String auther;
+	private String digest;
+	private int isDefaultDig;
 	private String content;
 	private Date createTime;
 	private Date lastUpdateTime;
@@ -13,7 +14,7 @@ public class BlogsArticle {
 	private int readTimes;
 	private int isDel;
 	
-	public BlogsArticle(){
+	public BlogsArticlePO(){
 		
 	}
 
@@ -31,14 +32,6 @@ public class BlogsArticle {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getAuther() {
-		return auther;
-	}
-
-	public void setAuther(String auther) {
-		this.auther = auther;
 	}
 
 	public String getContent() {
@@ -87,6 +80,22 @@ public class BlogsArticle {
 
 	public void setIsDel(int isDel) {
 		this.isDel = isDel;
+	}
+
+	public String getDigest() {
+		return digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+	}
+
+	public int getIsDefaultDig() {
+		return isDefaultDig;
+	}
+
+	public void setIsDefaultDig(int isDefaultDig) {
+		this.isDefaultDig = isDefaultDig;
 	}
 	
 	
